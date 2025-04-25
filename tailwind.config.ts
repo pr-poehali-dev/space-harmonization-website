@@ -6,7 +6,7 @@ export default {
 		"./pages/**/*.{ts,tsx}",
 		"./components/**/*.{ts,tsx}",
 		"./app/**/*.{ts,tsx}",
-		"./src/**/*.{ts,tsx}",
+		"./src/**/*.{ts,tsx}"
 	],
 	prefix: "",
 	theme: {
@@ -24,6 +24,18 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				purple: {
+					50: '#F6F4FE',
+					100: '#EDE9FD',
+					200: '#DCD3FB',
+					300: '#C0AEF8',
+					400: '#A589F5',
+					500: '#9b87f5',
+					600: '#7E69AB',
+					700: '#6E59A5',
+					800: '#4D3B7E',
+					900: '#1A1F2C',
+				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
