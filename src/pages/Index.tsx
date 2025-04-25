@@ -2,13 +2,13 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Check, Shield, Home, Zap } from "lucide-react";
+import { Check, Shield, Home, Zap, ArrowRight, Leaf, AlertTriangle } from "lucide-react";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-purple-50 to-white">
       {/* Хедер */}
-      <header className="bg-white shadow-sm">
+      <header className="bg-white shadow-sm sticky top-0 z-10">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <div className="text-2xl font-bold text-purple-900">ГармоСфера</div>
           <nav className="hidden md:flex space-x-6">
@@ -25,11 +25,12 @@ const Index = () => {
       <section className="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-12">
         <div className="md:w-1/2 space-y-6">
           <h1 className="text-4xl md:text-5xl font-bold text-purple-900 leading-tight">
-            Сделай дом источником силы и здоровья
+            Сделайте дом источником силы и здоровья
           </h1>
           <p className="text-lg text-gray-700">
             Гармонизация пространства - изменение окружающей среды внутри дома, офиса и других помещений, 
-            чтобы создать позитивные процессы, укрепляющие здоровье и жизненную активность человека.
+            чтобы создать позитивные процессы, укрепляющие здоровье и жизненную активность человека, 
+            нейтрализуя негативные факторы.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-purple-700 hover:bg-purple-800">
@@ -42,7 +43,7 @@ const Index = () => {
         </div>
         <div className="md:w-1/2">
           <img 
-            src="https://images.unsplash.com/photo-1570126688035-1e6adbd61053?q=80&w=800&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" 
             alt="Гармоничное пространство" 
             className="rounded-lg shadow-xl w-full h-auto"
           />
@@ -83,7 +84,7 @@ const Index = () => {
             
             <Card className="border-none shadow-md hover:shadow-lg transition-shadow">
               <CardContent className="pt-6">
-                <Zap className="w-12 h-12 text-purple-700 mb-4" />
+                <Leaf className="w-12 h-12 text-purple-700 mb-4" />
                 <h3 className="text-xl font-semibold text-purple-900 mb-2">Для вашего здоровья</h3>
                 <p className="text-gray-700">
                   Помогаем нейтрализовать негативные излучения, которые могут вызывать усталость, плохой сон и проблемы со здоровьем.
@@ -109,7 +110,12 @@ const Index = () => {
             <div className="md:w-1/2 mb-8 md:mb-0">
               <Card className="border-none shadow-md h-full">
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold text-purple-900 mb-4">Техногенные факторы</h3>
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 bg-red-100 rounded-full mr-3">
+                      <AlertTriangle className="w-6 h-6 text-red-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-purple-900">Техногенные факторы</h3>
+                  </div>
                   <p className="text-gray-700 mb-4">
                     Искусственные излучения электромагнитной природы, которые формируются техническими 
                     устройствами как внутри помещения, так и за его пределами.
@@ -135,7 +141,12 @@ const Index = () => {
             <div className="md:w-1/2">
               <Card className="border-none shadow-md h-full">
                 <CardContent className="pt-6">
-                  <h3 className="text-xl font-semibold text-purple-900 mb-4">Геопатогенные факторы</h3>
+                  <div className="flex items-center mb-4">
+                    <div className="p-2 bg-red-100 rounded-full mr-3">
+                      <AlertTriangle className="w-6 h-6 text-red-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold text-purple-900">Геопатогенные факторы</h3>
+                  </div>
                   <p className="text-gray-700 mb-4">
                     Естественные излучения земли, связанные с теллурическими и энергоинформационными 
                     процессами под поверхностью земли.
@@ -375,7 +386,9 @@ const Index = () => {
                     <span>Составление подробного отчета с рекомендациями</span>
                   </li>
                 </ul>
-                <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">Заказать измерение</Button>
+                <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                  Заказать измерение <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </CardContent>
             </Card>
             
@@ -404,23 +417,95 @@ const Index = () => {
                     <span>Масштабируемое решение для объектов любого размера</span>
                   </li>
                 </ul>
-                <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">Заказать гармонизацию</Button>
+                <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                  Заказать гармонизацию <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
               </CardContent>
             </Card>
           </div>
         </div>
       </section>
 
-      {/* Контакты */}
+      {/* Что такое дом-источник силы */}
       <section className="py-16 bg-purple-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-purple-900 mb-4">Дом как источник силы</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Когда дом выполняет возложенные на него задачи, он становится источником силы и энергии
+            </p>
+          </div>
+
+          <div className="bg-white p-8 rounded-xl shadow-md">
+            <p className="text-gray-700 mb-6">
+              Когда мы выбираем себе дом, то хотим, чтобы он дал нам максимальную пользу:
+            </p>
+            
+            <div className="grid md:grid-cols-3 gap-6 mb-6">
+              <div className="flex items-start">
+                <div className="p-2 bg-purple-100 rounded-full mr-3 mt-1">
+                  <Check className="w-4 h-4 text-purple-700" />
+                </div>
+                <p>Укрывал от суровых воздействий погоды</p>
+              </div>
+              <div className="flex items-start">
+                <div className="p-2 bg-purple-100 rounded-full mr-3 mt-1">
+                  <Check className="w-4 h-4 text-purple-700" />
+                </div>
+                <p>Защищал семью от влияния социума</p>
+              </div>
+              <div className="flex items-start">
+                <div className="p-2 bg-purple-100 rounded-full mr-3 mt-1">
+                  <Check className="w-4 h-4 text-purple-700" />
+                </div>
+                <p>Создавал атмосферу уюта и тепла</p>
+              </div>
+              <div className="flex items-start">
+                <div className="p-2 bg-purple-100 rounded-full mr-3 mt-1">
+                  <Check className="w-4 h-4 text-purple-700" />
+                </div>
+                <p>Сохранял имущество семьи</p>
+              </div>
+              <div className="flex items-start">
+                <div className="p-2 bg-purple-100 rounded-full mr-3 mt-1">
+                  <Check className="w-4 h-4 text-purple-700" />
+                </div>
+                <p>Восстанавливал силы и здоровье</p>
+              </div>
+              <div className="flex items-start">
+                <div className="p-2 bg-purple-100 rounded-full mr-3 mt-1">
+                  <Check className="w-4 h-4 text-purple-700" />
+                </div>
+                <p>Давал возможность хорошо выспаться</p>
+              </div>
+            </div>
+            
+            <p className="text-gray-700">
+              Дом всегда привязан к месту, и его местоположение определенно влияет на его возможности.
+              Есть несколько факторов, формирующихся благодаря местоположению дома, которые способны 
+              влиять на нашу жизненную энергию и активность. Эти факторы не очевидны, но сила их 
+              негативного воздействия может быть значительной. Наши специалисты помогут трансформировать
+              любое пространство в источник силы и здоровья.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Контакты */}
+      <section className="py-16 bg-gradient-to-b from-white to-purple-50">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-purple-900 mb-6">Сделайте первый шаг к здоровому пространству</h2>
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
             Мы поможем создать гармоничное и здоровое пространство, которое будет восстанавливать ваши силы и защищать от вредных воздействий.
           </p>
-          <Button size="lg" className="bg-purple-700 hover:bg-purple-800">
-            Получить консультацию
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button size="lg" className="bg-purple-700 hover:bg-purple-800">
+              Получить консультацию
+            </Button>
+            <Button size="lg" variant="outline" className="border-purple-700 text-purple-700 hover:bg-purple-100">
+              Задать вопрос специалисту
+            </Button>
+          </div>
         </div>
       </section>
 
