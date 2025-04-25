@@ -2,7 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Check, Shield, Home, Zap, ArrowRight, Leaf, AlertTriangle } from "lucide-react";
+import { 
+  Check, Shield, Home, Zap, ArrowRight, Leaf, 
+  AlertTriangle, Phone, Mail, MapPin, Car, 
+  Filter, Lightbulb, Activity, Users, User
+} from "lucide-react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const Index = () => {
   return (
@@ -16,6 +21,7 @@ const Index = () => {
             <a href="#problems" className="text-purple-800 hover:text-purple-600 transition-colors">Проблемы</a>
             <a href="#solutions" className="text-purple-800 hover:text-purple-600 transition-colors">Решения</a>
             <a href="#services" className="text-purple-800 hover:text-purple-600 transition-colors">Услуги</a>
+            <a href="#team" className="text-purple-800 hover:text-purple-600 transition-colors">Команда</a>
           </nav>
           <Button className="bg-purple-700 hover:bg-purple-800">Связаться с нами</Button>
         </div>
@@ -360,69 +366,270 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
-              <div className="bg-purple-700 text-white p-6">
-                <h3 className="text-2xl font-bold mb-2">Измерение</h3>
-                <p className="text-xl opacity-90">от 5 000₽</p>
-                <p className="text-sm opacity-80 mt-1">стоимость указана за небольшую комнату, общая стоимость зависит от площади</p>
-              </div>
-              <CardContent className="pt-6">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Определение местоположения зон излучения</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Измерение интенсивности и характеристик излучения</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Оценка воздействия излучения на человека</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Составление подробного отчета с рекомендациями</span>
-                  </li>
-                </ul>
-                <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
-                  Заказать измерение <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
+          <Tabs defaultValue="home" className="mb-12">
+            <TabsList className="grid grid-cols-2 md:grid-cols-4 mb-8">
+              <TabsTrigger value="home">Для дома</TabsTrigger>
+              <TabsTrigger value="office">Для офиса</TabsTrigger>
+              <TabsTrigger value="auto">Для автомобиля</TabsTrigger>
+              <TabsTrigger value="additional">Дополнительно</TabsTrigger>
+            </TabsList>
             
-            <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
-              <div className="bg-purple-700 text-white p-6">
-                <h3 className="text-2xl font-bold mb-2">Гармонизация помещения</h3>
-                <p className="text-xl opacity-90">от 42 000₽</p>
-                <p className="text-sm opacity-80 mt-1">для помещения любого назначения</p>
-              </div>
-              <CardContent className="pt-6">
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Установка специальных гармонизаторов пространства</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Нейтрализация техногенных и геопатогенных излучений</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Контрольные замеры до и после установки</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
-                    <span>Масштабируемое решение для объектов любого размера</span>
-                  </li>
-                </ul>
-                <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
-                  Заказать гармонизацию <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
+            <TabsContent value="home" className="grid md:grid-cols-2 gap-8">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Измерение</h3>
+                  <p className="text-xl opacity-90">от 5 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">стоимость указана за небольшую комнату, общая стоимость зависит от площади</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Определение местоположения зон излучения</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Измерение интенсивности и характеристик излучения</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Оценка воздействия излучения на человека</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Составление подробного отчета с рекомендациями</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать измерение <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Гармонизация помещения</h3>
+                  <p className="text-xl opacity-90">от 42 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">для помещения любого назначения</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Установка специальных гармонизаторов пространства</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Нейтрализация техногенных и геопатогенных излучений</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Контрольные замеры до и после установки</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Масштабируемое решение для объектов любого размера</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать гармонизацию <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="office" className="grid md:grid-cols-2 gap-8">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Измерение офиса</h3>
+                  <p className="text-xl opacity-90">от 8 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">стоимость указана за небольшой офис, общая стоимость зависит от площади</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Анализ рабочих мест и зон высокого риска</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Оценка воздействия офисной техники</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Анализ общих зон и переговорных комнат</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Рекомендации по организации рабочего пространства</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать измерение офиса <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Гармонизация офиса</h3>
+                  <p className="text-xl opacity-90">от 55 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">для офисов и рабочих помещений</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Комплексная гармонизация рабочей среды</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Нейтрализация излучений от офисного оборудования</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Повышение производительности и комфорта сотрудников</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Снижение утомляемости и стресса на рабочем месте</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать гармонизацию офиса <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="auto" className="grid md:grid-cols-2 gap-8">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Гармонизация автомобиля</h3>
+                  <p className="text-xl opacity-90">47 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">для обычных автомобилей</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Создание защитного электромагнитного вихря вокруг автомобиля</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Радиус действия 25 метров при движении</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Защита водителя и пассажиров от внешних аномальных воздействий</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Защита агрегатов автомобиля</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать для автомобиля <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Гармонизация электромобиля</h3>
+                  <p className="text-xl opacity-90">71 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">для электромобилей любых моделей</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Создание энергетического оазиса в кабине электромобиля</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Преобразование вредных бегущих волн в полезные вертикальные</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Увеличение времени работы аккумуляторов на 30-60%</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Сокращение времени зарядки батарей</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать для электромобиля <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="additional" className="grid md:grid-cols-2 gap-8">
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Дизайн интерьера</h3>
+                  <p className="text-xl opacity-90">от 1 000₽/м²</p>
+                  <p className="text-sm opacity-80 mt-1">стоимость за квадратный метр</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Разработка дизайна с учетом расположения геопатогенных зон</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Оптимальное размещение мест длительного пребывания</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Создание уюта и функциональности помещения</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Рекомендации по оптимальному расположению мебели</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать дизайн интерьера <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+              
+              <Card className="border-none shadow-lg hover:shadow-xl transition-shadow overflow-hidden">
+                <div className="bg-purple-700 text-white p-6">
+                  <h3 className="text-2xl font-bold mb-2">Установка фильтров «грязного» электричества</h3>
+                  <p className="text-xl opacity-90">5 000₽</p>
+                  <p className="text-sm opacity-80 mt-1">стоимость за 1 фильтр (под заказ)</p>
+                </div>
+                <CardContent className="pt-6">
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Нейтрализация электромагнитного смога от электросети</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Подавление высокочастотных помех из электросети</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Установка фильтров американской фирмы GREENWAVE</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Индивидуальный подбор количества фильтров под ваши нужды</span>
+                    </li>
+                  </ul>
+                  <Button className="w-full mt-6 bg-purple-700 hover:bg-purple-800">
+                    Заказать установку фильтров <ArrowRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </div>
       </section>
 
@@ -480,30 +687,189 @@ const Index = () => {
               </div>
             </div>
             
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-6">
               Дом всегда привязан к месту, и его местоположение определенно влияет на его возможности.
               Есть несколько факторов, формирующихся благодаря местоположению дома, которые способны 
               влиять на нашу жизненную энергию и активность. Эти факторы не очевидны, но сила их 
-              негативного воздействия может быть значительной. Наши специалисты помогут трансформировать
-              любое пространство в источник силы и здоровья.
+              негативного воздействия может быть значительной.
             </p>
+            
+            <div className="bg-purple-50 p-6 rounded-lg mb-4">
+              <p className="text-gray-700 italic">
+                "Наша планета является живой системой, проявляет активность и создает не только геотектонические процессы, 
+                но и движение более тонких энергий, связанные с разломами слоев подземных пород, 
+                образованием пустот, движением подземных рек и другими феноменами."
+              </p>
+            </div>
+            
+            <p className="text-gray-700">
+              Наши специалисты помогут трансформировать любое пространство в источник силы и здоровья,
+              нейтрализуя вредные излучения и создавая гармоничную энергетическую среду для вас и вашей семьи.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* О команде */}
+      <section id="team" className="py-16">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-purple-900 mb-4">Наша команда</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto">
+              Мы небольшая дружная команда, вдохновленная философией самосовершенствования жизни
+            </p>
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-8 items-start mb-12">
+            <div className="md:w-1/3">
+              <div className="bg-white p-8 rounded-lg shadow-md text-center">
+                <div className="w-32 h-32 bg-purple-100 rounded-full mx-auto mb-6 flex items-center justify-center">
+                  <User className="w-16 h-16 text-purple-700" />
+                </div>
+                <h3 className="text-xl font-bold text-purple-900 mb-2">Дмитрий Шадрин</h3>
+                <p className="text-gray-600 mb-4">Руководитель проекта</p>
+                <p className="text-sm text-gray-700 mb-4">
+                  В 2012-2015 проходил обучение в Швейцарии и Италии, сначала в Академии OJAS в Цюрихе, 
+                  а затем успешно закончил курс и сдал практический экзамен в Швейцарской Академии 
+                  Энергетической Биологии Строений.
+                </p>
+              </div>
+            </div>
+            
+            <div className="md:w-2/3">
+              <div className="bg-white p-8 rounded-lg shadow-md">
+                <h3 className="text-xl font-bold text-purple-900 mb-4">О нас</h3>
+                <p className="text-gray-700 mb-6">
+                  Наша небольшая дружная команда вдохновлена философией самосовершенствования жизни, 
+                  чтобы исследовать свой внутренний потенциал и выразить мировоззрение для раскрытия 
+                  Источника творчества в самом себе. Все это привело нас к участию в проекте гармонизации пространства.
+                </p>
+                <p className="text-gray-700 mb-6">
+                  Мы находимся в городе Ижевске и работаем с клиентами по всей России. Наша цель — помочь 
+                  людям создать здоровое и гармоничное пространство для жизни и работы, где они смогут 
+                  восстанавливать силы, укреплять здоровье и развивать свой творческий потенциал.
+                </p>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-purple-900 mb-2">Наши принципы:</h4>
+                  <ul className="space-y-2">
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Индивидуальный подход к каждому клиенту</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Научный подход и проверенные технологии</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="min-w-5 h-5 text-purple-700 mr-2 mt-1" />
+                      <span>Постоянное совершенствование методов и инструментов</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Контакты */}
       <section className="py-16 bg-gradient-to-b from-white to-purple-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-purple-900 mb-6">Сделайте первый шаг к здоровому пространству</h2>
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-            Мы поможем создать гармоничное и здоровое пространство, которое будет восстанавливать ваши силы и защищать от вредных воздействий.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-purple-700 hover:bg-purple-800">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-purple-900 mb-4">Свяжитесь с нами</h2>
+            <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+              Мы поможем создать гармоничное и здоровое пространство, которое будет восстанавливать ваши силы и защищать от вредных воздействий.
+            </p>
+          </div>
+          
+          <div className="flex flex-col md:flex-row gap-8 items-stretch mb-12">
+            <div className="md:w-1/2 bg-white p-8 rounded-lg shadow-md flex flex-col">
+              <h3 className="text-xl font-bold text-purple-900 mb-6">Наши контакты</h3>
+              <div className="space-y-4 mb-8">
+                <div className="flex items-center">
+                  <Phone className="w-5 h-5 text-purple-700 mr-3" />
+                  <a href="tel:+79225051700" className="text-gray-700 hover:text-purple-700 transition-colors">
+                    +7-922-50-51-700
+                  </a>
+                </div>
+                <div className="flex items-center">
+                  <Mail className="w-5 h-5 text-purple-700 mr-3" />
+                  <a href="mailto:homenergy@yandex.ru" className="text-gray-700 hover:text-purple-700 transition-colors">
+                    homenergy@yandex.ru
+                  </a>
+                </div>
+                <div className="flex items-start">
+                  <MapPin className="w-5 h-5 text-purple-700 mr-3 mt-1" />
+                  <span className="text-gray-700">г. Ижевск</span>
+                </div>
+              </div>
+              <div className="mt-auto">
+                <h4 className="font-semibold text-purple-900 mb-3">Часы работы:</h4>
+                <p className="text-gray-700">
+                  Пн-Пт: 9:00 - 18:00<br />
+                  Сб: 10:00 - 15:00<br />
+                  Вс: выходной
+                </p>
+              </div>
+            </div>
+            
+            <div className="md:w-1/2 bg-white p-8 rounded-lg shadow-md">
+              <h3 className="text-xl font-bold text-purple-900 mb-6">Отправить сообщение</h3>
+              <form className="space-y-4">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+                    Ваше имя
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="Введите ваше имя"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">
+                    Телефон
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="+7 (___) ___-__-__"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="example@mail.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+                    Сообщение
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={4}
+                    className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
+                    placeholder="Опишите ваш запрос"
+                  ></textarea>
+                </div>
+                <Button className="w-full bg-purple-700 hover:bg-purple-800">
+                  Отправить сообщение
+                </Button>
+              </form>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <Button size="lg" className="bg-purple-700 hover:bg-purple-800 mx-auto">
               Получить консультацию
-            </Button>
-            <Button size="lg" variant="outline" className="border-purple-700 text-purple-700 hover:bg-purple-100">
-              Задать вопрос специалисту
             </Button>
           </div>
         </div>
@@ -525,16 +891,17 @@ const Index = () => {
               <ul className="space-y-2 opacity-80">
                 <li>Измерение геопатогенных зон</li>
                 <li>Гармонизация помещений</li>
-                <li>Консультации по обустройству интерьера</li>
-                <li>Установка гармонизаторов</li>
+                <li>Дизайн интерьера</li>
+                <li>Установка фильтров "грязного" электричества</li>
+                <li>Гармонизация автомобилей</li>
               </ul>
             </div>
             <div>
               <h3 className="text-xl font-bold mb-4">Контакты</h3>
               <ul className="space-y-2 opacity-80">
-                <li>Телефон: +7 (XXX) XXX-XX-XX</li>
-                <li>Email: info@гармосфера.рф</li>
-                <li>Адрес: г. Ижевск, ул. Примерная, 123</li>
+                <li>Телефон: +7-922-50-51-700</li>
+                <li>Email: homenergy@yandex.ru</li>
+                <li>Адрес: г. Ижевск</li>
               </ul>
             </div>
           </div>
